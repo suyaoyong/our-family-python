@@ -31,13 +31,13 @@ text = text.replace(",","")
 text = text.replace("*","")
 text1 = text.split()
 templist = []
-print(text1)
+#print(text1)
 for i in text1:
     #print(i.find("ea"))
     if i.find("ea") >= 0:       #find the words which contain "ea"
         #print(i)
         templist.append(i)
-print(templist)   
+#print(templist)   
 step3 = [x for x in text1 if x not in templist]                   #del the words which contain "ea"
 #print (step3)
 

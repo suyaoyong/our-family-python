@@ -30,7 +30,7 @@ text = text.replace(",","")
 text = text.replace("*","")
 list1 = text.split()
 templist = []
-print(list1)
+#print(list1)
 consquence = []
 
 dictionary_1 = {}                               #use dictionanry to count the list1
@@ -39,8 +39,15 @@ for i in list1:
         dictionary_1[i] += 1
     else:
         dictionary_1[i] = 1
-sored_dic = sorted(dictionary_1.items())
-print dict(dictionary_1)
+#print(dictionary_1)
+templist = sorted(dictionary_1.items(), key=lambda d:d[1], reverse = True )     #sort the dictionary and output a list contains tuples
+#print(templist)
+dictionary_1 = {}                                                               #reset the dictionary
+for i in templist:                                                              #change the list to sorted dictionary
+    dictionary_1[i[0]] = i[1]
+
+#sored_dic = sorted(dictionary_1.items())
+print(dictionary_1)
 
 
 

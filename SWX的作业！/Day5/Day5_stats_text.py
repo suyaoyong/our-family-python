@@ -36,8 +36,8 @@ for i in list1:
 print(u)
 
 print("第3小题")
-d = sorted(u.items(), key=lambda x: x[1])
-d.reverse()
+d = sorted(u.items(), key=lambda x: x[1],reverse =True)
+#d.reverse()
 print(d)
 
 print("第4小题")

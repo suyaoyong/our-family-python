@@ -44,9 +44,9 @@ def stats_text_en(n) :          #统计参数中每个英文单词出现的次�
  
     d = sorted(dict_n.items(), key=lambda x: x[1],reverse =True )
     #d.reverse()
-    print(d)
+    return d
 
-stats_text_en(text1)
+#stats_text_en(text1)
 
 
 text2 = '''
@@ -77,7 +77,19 @@ def stats_text_cn(a) :       #统计参数中每个中文汉字出现的次数�
         word_dict[word] =  word_list.count(word)
 
     word_out = sorted(word_dict.items(), key=lambda x: x[1],reverse =True )
-    print(word_out)
+    return word_out
 #x[1]是按字频排序，x[0]是按字排序
 
-stats_text_cn(text2)
+#stats_text_cn(text2)
+
+text3 = '''jsjirtj ak admnsk dsijs 截图上受到攻击法术抵抗给你了老师的话开审得得得得的额尔德的'''
+def stats_text(x):         #分别调用stats_text_en和stats_text_cn，输出合并词频统计结果
+    re = stats_text_en(x) + stats_text_cn(x)
+    print(re)
+
+x = text3
+
+stats_text(x)
+if __name__ == '_main_':
+    en_text = '''
+    the zone of python'''

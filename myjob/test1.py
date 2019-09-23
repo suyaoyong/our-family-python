@@ -24,31 +24,31 @@ sub1 = driver.find_element_by_id('btnSubmit').click() #登录网站
 #sub = driver.find_elements_by_class_name('submit_btn').click()
  #等待登录时间，这个方法虽然不太好，以后再改
 driver.maximize_window()  #窗口最大化
-try:
-    element = WebDriverWait(driver, 10).until(lambda x : x.find_element_by_id("spm6")) #通过这个方式确定找到元素后才进行下一步。减少时间浪费。选择报表一栏
-    element.click()
-finally:
-    time.sleep(10)
-    driver.quit()
- 
-#pwd = driver.find_element_by_id('spm6').click() #选择报表一栏=spm6  #day > span > input.textbox-text.textbox-text-readonly.validatebox-text////*[@id="day"]/span/input[1]
-try:
-    display = WebDriverWait(driver, 10).until(lambda x : x.find_element_css_selector('#btn_hourDataSearch > span > span.l-btn-text')) #显示报表在页面
-    display.click()
-finally:
-    time.sleep(10)
-    driver.quit()
-#display = driver.find_element_by_css_selector('#btn_hourDataSearch > span > span.l-btn-text').click()  #显示报表在页面
+# try:
+#     element = WebDriverWait(driver, 10).until(lambda x : x.find_element_by_id("spm6")) #通过这个方式确定找到元素后才进行下一步。减少时间浪费。选择报表一栏
+#     element.click()
+# finally:
+#     time.sleep(10)
+#     driver.quit()
+time.sleep(2) 
+pwd = driver.find_element_by_id('spm6').click() #选择报表一栏=spm6  #day > span > input.textbox-text.textbox-text-readonly.validatebox-text////*[@id="day"]/span/input[1]
+# try:
+#     display = WebDriverWait(driver, 10).until(lambda x : x.find_element_css_selector('#btn_hourDataSearch > span > span.l-btn-text')) #显示报表在页面
+#     display.click()
+# finally:
+#     time.sleep(10)
+#     driver.quit()
+display = driver.find_element_by_css_selector('#btn_hourDataSearch > span > span.l-btn-text').click()  #显示报表在页面
 #but1 = driver.find_elements_by_css_selector('#day > span').click()  #选择到时间按钮，并弹出时间控件
-try:
-    display = WebDriverWait(driver, 10).until(lambda x : x.find_element_css_selector('#idReportView > div > table > tbody')) #显示报表在页面
-    display.click()
-finally:
-    time.sleep(10)
-    driver.quit()
-#table1 = driver.find_element_by_css_selector('#idReportView > div > table > tbody')#获取整个表格元素#idReportView > div > table > tbody > tr:nth-child(35)
+# try:
+#     display = WebDriverWait(driver, 10).until(lambda x : x.find_element_css_selector('#idReportView > div > table > tbody')) #显示报表在页面
+#     display.click()
+# finally:
+#     time.sleep(10)
+#     driver.quit()
+table1 = driver.find_element_by_css_selector('#idReportView > div > table > tbody')#获取整个表格元素#idReportView > div > table > tbody > tr:nth-child(35)
 
-
+time.sleep(2) 
 rows = table1.find_elements_by_css_selector('tr')#这样就获取了整个表格的数据，通过col1[i].text可以获取全部数据
 row_str = []  #定义一个空列表准备作为数据容器
 for row in rows:

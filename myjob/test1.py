@@ -33,7 +33,6 @@ driver.maximize_window()  #窗口最大化
 #     driver.quit()
 time.sleep(2) 
 pwd = driver.find_element_by_id('spm6').click() #选择报表一栏=spm6  #day > span > input.textbox-text.textbox-text-readonly.validatebox-text////*[@id="day"]/span/input[1]
-
 # try:
 #     display = WebDriverWait(driver, 10).until(lambda x : x.find_element_by_id("btn_hourDataSearch"))  #显示报表在页面成功完成检测
 #     display.click()
